@@ -25,6 +25,16 @@ app.get('/myinfo/:name/:age', (req, res) => {
     let myage = req.params.age || "unknown";
     res.sendFile(path.join(__dirname, 'pages', 'myinfo.html'))
 });
+app.get("/download", (req, res) => {
+
+    res.download(path.join(__dirname, 'files', 'Doc.docx'), 'chanthuru.docx', (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("File downloaded successfully");
+        }
+    });
+});
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
