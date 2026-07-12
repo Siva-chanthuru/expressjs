@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         body {
-            background-color: rgb(8, 48, 61);
+            background-color: rgb(169, 219, 235);
         }
     </style>
 </head>
@@ -15,6 +15,14 @@
 <body>
     <h1>Contact Page</h1>
     <p>This is the contact page.</p>
+    <form action="/submit" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="fname" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="lname" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 
 </html>
