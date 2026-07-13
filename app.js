@@ -50,20 +50,21 @@ app.put('/submit', (req, res) => {
 
 app.get('/student', (req, res) => {
  
- res.send("show student details");
+// res.send("show student details");
 });
-// app.get('/student/:id', (req, res) => {
-//     let studentId = req.params.id;
-//    // res.send(show student details for student with ID: ${studentId});
-  
-    
-// });
+app.get('/student', (req, res) => {
+    res.send("show student details"); 
+});
+app.get('/student/:id', (req, res) => {
+    let studentId = req.params.id;
+    res.send(`show student details for student with ID: ${studentId}`);
+});
 app.post('/student', (req, res) => {
     res.send("create a new student");
 });
 app.put('/student/:id', (req, res) => {
     let studentId = req.params.id;
-    res.send(`update student with ID: ${studentId}`);
+    res.send(`update student details for student with ID: ${studentId}`);
 });
 app.delete('/student/:id', (req, res) => {
     let studentId = req.params.id;
