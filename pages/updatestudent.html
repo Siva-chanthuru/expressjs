@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+
+    <style>
+        body {
+            background-color: #e8f5e9;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form {
+            width: 450px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            border: 2px solid #28a745;
+            outline: none;
+            background-color: #f5fff6;
+        }
+
+        input:disabled {
+            background-color: #eeeeee;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        input[type="submit"],
+        input[type="button"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        input[type="button"] {
+            background-color: #6c757d;
+        }
+
+        input[type="button"]:hover {
+            background-color: #5a6268;
+        }
+
+        input[type="reset"] {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #e0a800;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="/student/15?_method=PUT" method="POST">
+
+        <h1>Update Student</h1>
+
+        <label>ID:</label>
+        <input type="text" value="15" disabled>
+
+        <label for="admissionNumber">Admission Number:</label>
+        <input type="text" id="admissionNumber" name="admissionNumber">
+
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname">
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname">
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="">--Select Gender--</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="nic">National Identity Card:</label>
+        <input type="text" id="nic" name="nic">
+
+        <label for="birthcertificatenumber">Birth Certificate Number:</label>
+        <input type="text" id="birthcertificatenumber" name="birthcertificatenumber">
+
+        <label for="medium_id">Medium:</label>
+        <select id="medium_id" name="medium_id">
+            <option value="">--Select Medium--</option>
+            <option value="tamil">Tamil</option>
+            <option value="english">English</option>
+            <option value="sinhala">Sinhala</option>
+        </select>
+
+        <label for="dateofadmission">Date of Admission:</label>
+        <input type="date" id="dateofadmission" name="dateofadmission">
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea>
+
+        <div class="buttons">
+            <input type="submit" value="Save Changes">
+            <input type="button" value="Cancel">
+            <input type="reset" value="Clear">
+        </div>
+
+    </form>
+
+</body>
+
+</html>

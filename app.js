@@ -45,16 +45,19 @@ app.put('/submit', (req, res) => {
   
     res.send(`Form submitted successfully for ${fname} ${lname}`);
 });
+
+
+
 app.get('/student', (req, res) => {
  
  res.send("show student details");
 });
-app.get('/student/:id', (req, res) => {
-    let studentId = req.params.id;
-    res.send(show student details for student with ID: ${studentId});
+// app.get('/student/:id', (req, res) => {
+//     let studentId = req.params.id;
+//    // res.send(show student details for student with ID: ${studentId});
   
     
-});
+// });
 app.post('/student', (req, res) => {
     res.send("create a new student");
 });
