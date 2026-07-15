@@ -15,7 +15,7 @@ app.get('/student', (req, res) => {
 app.get('/student/:id', (req, res) => {
     const studentId = req.params.id;
     res.render('student', { title: 'Student Page', message: `Details for student with ID: ${studentId}` });
-
+});
 app.use(methodoverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 const mypage = (req, res) => {
