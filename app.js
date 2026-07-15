@@ -3,6 +3,19 @@ const path = require('path');
 const methodoverride = require('method-override');
 const app = express();
 const port = 5000;
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    res.render('index', { title: 'hey', message: 'Hello there!' });
+});
+
+app.get('/student', (req, res) => {
+    res.render('student', { title: 'Student Page', message: 'Welcome to the Student Page!' });
+});
+app.get('/student/:id', (req, res) => {
+    const studentId = req.params.id;
+    res.render('student', { title: 'Student Page', message: `Details for student with ID: ${studentId}` });
+
 app.use(methodoverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 const mypage = (req, res) => {
