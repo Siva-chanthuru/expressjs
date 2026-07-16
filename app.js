@@ -1,89 +1,26 @@
 const express = require('express');
-const path = require('path');
-const methodoverride = require('method-override');
+const layout = require('express-ejs-layouts');
 const app = express();
-const port = 5000;
+const port = 3000;
 app.set('view engine', 'ejs');
-
+app.use(layout);
+app.set('layout', 'layouts/main');
 app.get('/', (req, res) => {
-    res.render('index', { title: 'hey', message: 'Hello there!' });
+    res.render('index', { title: 'home', message: 'Hello there!' });
 });
 
+
 app.get('/student', (req, res) => {
-    res.render('student', { title: 'Student Page', message: 'Welcome to the Student Page!' });
+    res.render('student/index', {layout: 'layouts/master', title: 'Student Page', message: 'Welcome to the student page!' });
 });
-app.get('/student/:id', (req, res) => {
+app.get('/student/:id/show', (req, res) => {
     const studentId = req.params.id;
-    res.render('student', { title: 'Student Page', message: `Details for student with ID: ${studentId}` });
-});
-app.use(methodoverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')));
-const mypage = (req, res) => {
-    console.log(path.join(__dirname, 'pages', 'index.html'));
-    res.sendFile(path.join(__dirname, 'pages', 'index.html'));
-};
-app.get('/', mypage);
-
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'pages', 'about.html'))
-});
-app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'pages', 'contact.html'))
-});
-app.get('/profile', (req, res) => {
-    let myname = req.query.name || "Guest";
-    let myage = req.query.age || "unknown";
-    res.sendFile(path.join(__dirname, 'pages', 'profile.html'))
-});
-app.get('/myinfo/:name/:age', (req, res) => {
-    let myname = req.params.name || "Guest";
-    let myage = req.params.age || "unknown";
-    res.sendFile(path.join(__dirname, 'pages', 'myinfo.html'))
-});
-app.get("/download", (req, res) => {
-
-    res.download(path.join(__dirname, 'files', 'Doc.docx'), 'chanthuru.docx', (err) => {
-        if (err) {
-            console.log(err);
-            res.status(404).send("Error downloading the file");
-        } else {
-            console.log("File downloaded successfully");
-        res.end();      
-        }   
-    });
-});
-app.put('/submit', (req, res) => {
-    let fname = req.body.fname || "Guest";
-    let lname = req.body.lname || "unknown";
-  
-    res.send(`Form submitted successfully for ${fname} ${lname}`);
+    res.render('student/show', { title: 'Student show Page', message: `Welcome to the student page for student ID: ${studentId}` });
 });
 
-
-
-app.get('/student', (req, res) => {
- 
-// res.send("show student details");
+app.get('/student/create', (req, res) => {
+    res.render('student/create', { title: 'Student Create Page', message: 'Welcome to the student create page!' });
 });
-app.get('/student', (req, res) => {
-    res.send("show student details"); 
-});
-app.get('/student/:id', (req, res) => {
-    let studentId = req.params.id;
-    res.send(`show student details for student with ID: ${studentId}`);
-});
-app.post('/student', (req, res) => {
-    res.send("create a new student");
-});
-app.put('/student/:id', (req, res) => {
-    let studentId = req.params.id;
-    res.send(`update student details for student with ID: ${studentId}`);
-});
-app.delete('/student/:id', (req, res) => {
-    let studentId = req.params.id;
-    res.send(`delete student with ID: ${studentId}`);
-});
-
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
