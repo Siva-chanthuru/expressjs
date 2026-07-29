@@ -1,12 +1,37 @@
 const express = require('express');
 const layout = require('express-ejs-layouts');
+const methodOverride = require('method-override');
 const db = require('./config/db.js');
 const app = express();
 const port = 3000;
 app.set('view engine', 'ejs');
 app.use(layout);
+app.use(methodOverride('_method'));
 app.set('layout', 'layouts/main');
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+app.delete('/student/:id', (req, res) => {
+    const studentId = req.params.id;
+    console.log("student id to delete:", studentId);
+
+    db.connect((err) => {
+        if (err) {
+            return res.send("Error connecting to the database!");
+        }
+
+        db.query(
+            "DELETE FROM students WHERE id = ?",
+            [studentId],
+            (err, results) => {
+                if (err) {
+                    return res.send("Error executing query! " + err);
+                }
+
+                res.redirect("/student");
+            }
+        );
+    });
+});
 app.get('/', (req, res) => {
     res.render('index', { title: 'home', message: 'Hello there!' });
 });
