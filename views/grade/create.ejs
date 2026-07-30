@@ -1,0 +1,33 @@
+<h2>Create Grade</h2>
+
+<form action="/grade" method="POST">
+
+    <div class="mb-3">
+        <label class="form-label">Grade Name</label>
+        <input type="text" name="grade_name" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Grade Group</label>
+        <input type="number" name="grade_group" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Grade Order</label>
+        <input type="number" name="grade_order" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Colour</label>
+        <input type="text" name="colour" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Save
+    </button>
+
+    <a href="/grade" class="btn btn-secondary">
+        Back
+    </a>
+
+</form>
