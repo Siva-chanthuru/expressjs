@@ -1,0 +1,53 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">Edit Grade</h2>
+
+    <form action="/grade/<%= grade.id %>?_method=PUT" method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Grade Name</label>
+            <input type="text"
+                   name="grade_name"
+                   class="form-control"
+                   value="<%= grade.grade_name %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Grade Group</label>
+            <input type="number"
+                   name="grade_group"
+                   class="form-control"
+                   value="<%= grade.grade_group %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Grade Order</label>
+            <input type="number"
+                   name="grade_order"
+                   class="form-control"
+                   value="<%= grade.grade_order %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Colour</label>
+            <input type="text"
+                   name="colour"
+                   class="form-control"
+                   value="<%= grade.colour %>"
+                   required>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Update
+        </button>
+
+        <a href="/grade" class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+
+</div>
