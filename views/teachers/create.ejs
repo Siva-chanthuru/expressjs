@@ -1,0 +1,93 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3>Create Teacher</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form action="/teacher" method="POST">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Registration Number</label>
+                        <input type="text" name="registration_number" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">NIC Number</label>
+                        <input type="text" name="nic_number" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="first_name" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="last_name" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Gender</label>
+
+                        <select name="gender" class="form-select" required>
+                            <option value="">-- Select Gender --</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Title</label>
+
+                        <select name="title" class="form-select">
+                            <option value="">-- Select Title --</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Dr">Dr</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Date of Birth</label>
+                        <input type="date" name="date_of_birth" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="text" name="mobile_number" class="form-control">
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Permanent Address</label>
+                        <textarea name="permanent_address" rows="3" class="form-control"></textarea>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Date of First Appointment</label>
+                        <input type="date" name="date_of_first_appointment" class="form-control">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    Save Teacher
+                </button>
+
+                <a href="/teacher" class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
