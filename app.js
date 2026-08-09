@@ -13,6 +13,7 @@ app.use(methodOverride("_method"));
 app.use('/student', require('./routes/student.js'));
 app.use('/grade', require('./routes/grade.js'));
 app.use('/teacher', require('./routes/teachers.js'));
+app.use('/subjects', require('./routes/subjects.js'));
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'home', message: 'Hello there!' });

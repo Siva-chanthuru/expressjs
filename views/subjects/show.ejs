@@ -1,0 +1,66 @@
+<div class="card shadow">
+
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Subject Details</h3>
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th width="30%">ID</th>
+                <td><%= subject.id %></td>
+            </tr>
+
+            <tr>
+                <th>Subject Name</th>
+                <td><%= subject.subject_name %></td>
+            </tr>
+
+            <tr>
+                <th>Subject Index</th>
+                <td><%= subject.subject_index %></td>
+            </tr>
+
+            <tr>
+                <th>Subject Order</th>
+                <td><%= subject.subject_order %></td>
+            </tr>
+
+            <tr>
+                <th>Subject Number</th>
+                <td><%= subject.subject_number %></td>
+            </tr>
+
+            <tr>
+                <th>Colour</th>
+                <td><%= subject.colour %></td>
+            </tr>
+
+        </table>
+
+        <a href="/subjects" class="btn btn-secondary">
+            ← Back
+        </a>
+
+        <a href="/subjects/<%= subject.id %>/edit"
+           class="btn btn-warning">
+            ✏️ Edit
+        </a>
+
+        <form action="/subjects/<%= subject.id %>?_method=DELETE"
+              method="POST"
+              style="display:inline;">
+
+            <button type="submit"
+                    class="btn btn-danger"
+                    onclick="return confirm('Are you sure you want to delete this subject?')">
+                🗑️ Delete
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

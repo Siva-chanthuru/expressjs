@@ -1,0 +1,67 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Subjects</h2>
+
+        <a href="/subjects/new" class="btn btn-primary">
+            + Add Subjects
+        </a>
+    </div>
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Subject Name</th>
+                <th>Index</th>
+                <th>Order</th>
+                <th>Subject Number</th>
+                <th>Colour</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <% subjects.forEach(subject => { %>
+
+                <tr>
+                    <td><%= subject.id %></td>
+                    <td><%= subject.subject_name %></td>
+                    <td><%= subject.subject_index %></td>
+                    <td><%= subject.subject_order %></td>
+                    <td><%= subject.subject_number %></td>
+                    <td><%= subject.colour %></td>
+
+                    <td>
+                        <a href="/subjects/<%= subject.id %>/show"
+                           class="btn btn-sm btn-info">
+                            👁️ View
+                        </a>
+                        <a href="/subjects/<%= subject.id %>/edit"
+                           class="btn btn-sm btn-warning">
+                            ✏️ Edit
+                        </a>
+
+                        <form action="/subjects/<%= subject.id %>?_method=DELETE"
+                              method="POST"
+                              style="display:inline;">
+
+                            <button type="submit"
+                                    class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Are you sure you want to delete this subject?')">
+                                🗑️ Delete
+                            </button>
+
+                        </form>
+                    </td>
+                </tr>
+
+            <% }) %>
+
+        </tbody>
+
+    </table>
+
+</div>

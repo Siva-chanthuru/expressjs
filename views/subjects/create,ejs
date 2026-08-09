@@ -1,0 +1,59 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3>Create Subject</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form action="/subjects" method="POST">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Subject Name</label>
+                        <input type="text" name="subject_name" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Subject Index</label>
+                        <input type="text" name="subject_index" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Subject Order</label>
+                        <input type="text" name="subject_order" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Subject Number</label>
+                        <input type="text" name="subject_number" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Colour</label>
+                        <input type="text" name="colour" class="form-control" required>
+
+              
+
+                  
+
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    Save subject
+                </button>
+
+                <a href="/subjects" class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
