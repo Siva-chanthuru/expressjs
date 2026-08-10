@@ -1,0 +1,63 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">Edit Subject</h2>
+
+    <form action="/subjects/<%= subject.id %>?_method=PUT" method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Subject Name</label>
+            <input type="text"
+                   name="subject_name"
+                   class="form-control"
+                   value="<%= subject.subject_name %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Subject Index</label>
+            <input type="text"
+                   name="subject_index"
+                   class="form-control"
+                   value="<%= subject.subject_index %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Subject Order</label>
+            <input type="text"
+                   name="subject_order"
+                   class="form-control"
+                   value="<%= subject.subject_order %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Subject Number</label>
+            <input type="text"
+                   name="subject_number"
+                   class="form-control"
+                   value="<%= subject.subject_number %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Colour</label>
+            <input type="text"
+                   name="colour"
+                   class="form-control"
+                   value="<%= subject.colour %>"
+                   required>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Update
+        </button>
+
+        <a href="/subjects" class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+
+</div>
+

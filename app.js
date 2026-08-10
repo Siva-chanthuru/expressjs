@@ -14,6 +14,7 @@ app.use('/student', require('./routes/student.js'));
 app.use('/grade', require('./routes/grade.js'));
 app.use('/teacher', require('./routes/teachers.js'));
 app.use('/subjects', require('./routes/subjects.js'));
+app.use('/houses', require('./routes/houses.js'));
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'home', message: 'Hello there!' });
