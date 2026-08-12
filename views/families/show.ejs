@@ -1,0 +1,62 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">Family Details</h2>
+
+    <table class="table table-bordered">
+
+        <tr>
+            <th width="200">ID</th>
+            <td><%= family.id %></td>
+        </tr>
+
+        <tr>
+            <th>Mobile Number</th>
+            <td><%= family.mobile_number %></td>
+        </tr>
+
+        <tr>
+            <th>Father's First Name</th>
+            <td><%= family.fa_first_name %></td>
+        </tr>
+
+        <tr>
+            <th>Mother's First Name</th>
+            <td><%= family.mo_first_name %></td>
+        </tr>
+
+        <tr>
+            <th>Father's Job</th>
+            <td><%= family.fa_job %></td>
+        </tr>
+
+        <tr>
+            <th>Mother's Job</th>
+            <td><%= family.mo_job %></td>
+        </tr>
+
+        <tr>
+            <th>Father's NIC Number</th>
+            <td><%= family.fa_nic_number %></td>
+        </tr>
+
+        <tr>
+            <th>Mother's NIC Number</th>
+            <td><%= family.mo_nic_number %></td>
+        </tr>
+
+        <tr>
+            <th>Residential Address</th>
+            <td><%= family.residential_address %></td>
+        </tr>
+
+    </table>
+
+    <a href="/families" class="btn btn-secondary">
+        Back
+    </a>
+
+    <a href="/families/<%= family.id %>/edit" class="btn btn-warning">
+        Edit
+    </a>
+
+</div>
