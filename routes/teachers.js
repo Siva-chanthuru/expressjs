@@ -269,7 +269,7 @@ router.delete('/:id', (req, res) => {
                     return res.send(err);
                 }
 
-                res.redirect('/teacher');
+                res.redirect('/teachers');
 
             }
         );

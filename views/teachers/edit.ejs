@@ -2,7 +2,7 @@
 
     <h2 class="mb-4">Edit Teacher</h2>
 
-    <form action="/teacher/<%= teacher.id %>?_method=PUT" method="POST">
+    <form action="/teachers/<%= teacher.id %>?_method=PUT" method="POST">
 
         <div class="mb-12">
             <label class="form-label">Registration Number</label>
@@ -15,7 +15,7 @@
 
         <div class="mb-6">
             <label class="form-label">Nic Number</label>
-            <input type="number"
+            <input type="Text"
                    name="nic_number"
                    class="form-control"
                    value="<%= teacher.nic_number %>"
@@ -47,8 +47,8 @@
                     class="form-control"
                     value="<%= teacher.gender %>"
                     
-                <option value="Male" <%= teacher.gender === 'Male' ? 'selected' : '' %>>Male</option>
-                <option value="Female" <%= teacher.gender === 'Female' ? 'selected' : '' %>>Female</option>
+                <option value="M" <%= teacher.gender === 'M' ? 'selected' : '' %>>Male</option>
+                <option value="F" <%= teacher.gender === 'F' ? 'selected' : '' %>>Female</option>
             </select>
         </div>
 
@@ -67,10 +67,10 @@
 
         <div class="mb-6">
             <label class="form-label">DOB</label>
-            <input type="text"
+            <input type="date"
                    name="dob"
                    class="form-control"
-                   value="<%= teacher.dob %>"
+                   value="<%= teacher.dob %>">
                   
         </div>
 
@@ -79,7 +79,7 @@
             <input type="text"
                    name="permanent_address"
                    class="form-control"
-                   value="<%= teacher.permanent_address %>"
+                   value="<%= teacher.permanent_address %>">
                 
         </div>
 
@@ -94,7 +94,7 @@
 
         <div class="mb-6">
             <label class="form-label">Date of First Appointment</label>
-            <input type="text"
+            <input type="date"
                    name="date_of_first_appointment"
                    class="form-control"
                    value="<%= teacher.date_of_first_appointment %>"

@@ -37,32 +37,24 @@ router.get('/', (req, res) => {
 
 router.get('/:id/show', (req, res) => {
 
-    const familyId = req.params.id;
+    const id = req.params.id;
 
-    db.connect((err) => {
+    const sql = 'SELECT * FROM families WHERE id = ?';
+
+    db.query(sql, [id], (err, results) => {
 
         if (err) {
-            return res.send('Error connecting to the database!');
+            console.log(err);
+            return res.status(500).send('Database Error');
         }
 
-        db.query('SELECT * FROM families WHERE id = ?', [familyId], (err, results) => {
+        if (results.length === 0) {
+            return res.status(404).send('Family Not Found');
+        }
 
-            if (err) {
-                console.log(err);
-                return res.send(err);
-            }
-
-            if (results.length === 0) {
-                return res.render('families/not_found', {
-                    title: 'Family Not Found'
-                });
-            }
-
-            res.render('families/show', {
-                title: 'Family Details',
-                family: results[0]
-            });
-
+        res.render('families/show', {
+            title: 'Family Details',
+            family: results[0]
         });
 
     });
