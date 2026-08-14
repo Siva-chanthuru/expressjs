@@ -8,6 +8,7 @@ app.set('view engine', 'ejs');
 app.use(layout);
 app.set('layout', 'layouts/main');
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 app.use(methodOverride("_method"));
 
 app.use('/student', require('./routes/student.js'));

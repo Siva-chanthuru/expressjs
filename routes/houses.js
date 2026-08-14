@@ -182,15 +182,11 @@ router.put('/:id', (req, res) => {
         db.query(
             `UPDATE houses
              SET house_name = ?,
-                 house_address = ?,
-                 house_number = ?,
-                 colour = ?
+                 house_color = ?
              WHERE id = ?`,
             [
                 house_name,
-                house_address,
-                house_number,
-                colour,
+                house_color,
                 houseId
             ],
             (err, results) => {
@@ -227,12 +223,10 @@ router.post('/', (req, res) => {
 
     const {
         house_name,
-        house_address,
-        house_number,
-        colour
+        house_color
     } = req.body;
 
-    if (!house_name || !house_address || !house_number || !colour) {
+    if (!house_name || !house_color) {
         return res.status(400).send('All fields are required');
     }
 
@@ -244,13 +238,11 @@ router.post('/', (req, res) => {
 
         db.query(
             `INSERT INTO houses
-            (house_name, house_address, house_number, colour)
-            VALUES (?, ?, ?, ?)`,
+            (house_name, house_color)
+            VALUES (?, ?)`,
             [
                 house_name,
-                house_address,
-                house_number,
-                colour
+                house_color
             ],
             (err, results) => {
 
@@ -266,8 +258,4 @@ router.post('/', (req, res) => {
 
 });
 
-
-// ===============================
-// EXPORT ROUTER
-// ===============================
 module.exports = router;
