@@ -1,4 +1,251 @@
-<form action="/student" method="POST" class="row g-3">
+<form action="/student" method="POST" class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+
+  <!-- Admission Number -->
+  <div class="sm:col-span-3">
+    <label for="admission_number"
+           class="block text-sm/6 font-medium text-gray-900">
+      Admission Number
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="admission_number"
+             name="admission_number"
+             required
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+
+  <!-- First Name -->
+  <div class="sm:col-span-3">
+    <label for="first_name"
+           class="block text-sm/6 font-medium text-gray-900">
+      First Name
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="first_name"
+             name="first_name"
+             required
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+
+  <!-- Last Name -->
+  <div class="sm:col-span-3">
+    <label for="last_name"
+           class="block text-sm/6 font-medium text-gray-900">
+      Last Name
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="last_name"
+             name="last_name"
+             required
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+
+  <!-- DOB -->
+  <div class="sm:col-span-3">
+    <label for="dob"
+           class="block text-sm/6 font-medium text-gray-900">
+      DOB
+    </label>
+
+    <div class="mt-2">
+      <input type="date"
+             id="dob"
+             name="dob"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+
+    <div class="sm:col-span-3">
+    <label for="nic_number"
+           class="block text-sm/6 font-medium text-gray-900">
+      Nic Number
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="nic_number"
+             name="nic_number"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+    <div class="sm:col-span-3">
+    <label for="birth_certificate_number"
+           class="block text-sm/6 font-medium text-gray-900">
+      Birth Certificate Number
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="birth_certificate_number"
+             name="birth_certificate_number"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+    <div class="sm:col-span-3">
+    <label for="telephone_number"
+           class="block text-sm/6 font-medium text-gray-900">
+      Telephone Number
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="telephone_number"
+             name="telephone_number"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+    <div class="sm:col-span-3">
+    <label for="house_id"
+           class="block text-sm/6 font-medium text-gray-900">
+      House ID
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="house_id"
+             name="house_id"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+    <div class="sm:col-span-3">
+    <label for="medium"
+           class="block text-sm/6 font-medium text-gray-900">
+      Medium
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="medium"
+             name="medium"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+    <div class="sm:col-span-3">
+    <label for="date_of_admission"
+           class="block text-sm/6 font-medium text-gray-900">
+      Date of admission
+    </label>
+
+    <div class="mt-2">
+      <input type="date"
+             id="date_of_admission"
+             name="date_of_admission"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+
+  <!-- Address -->
+  <div class="sm:col-span-3">
+    <label for="per_address"
+           class="block text-sm/6 font-medium text-gray-900">
+      permanent Address
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="per_address"
+             name="per_address"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+
+  <!-- Grade -->
+  <div class="sm:col-span-3">
+    <label for="grade"
+           class="block text-sm/6 font-medium text-gray-900">
+      Grade
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="grade"
+             name="grade"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+
+  <!-- Gender -->
+  <div class="sm:col-span-3">
+    <label for="gender"
+           class="block text-sm/6 font-medium text-gray-900">
+      Gender
+    </label>
+
+    <div class="mt-2 grid grid-cols-1">
+      <select id="gender"
+              name="gender"
+              class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+
+        <option value="">Choose...</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+
+      </select>
+    </div>
+  </div>
+
+  <div class="sm:col-span-3">
+    <label for="home_phone"
+           class="block text-sm/6 font-medium text-gray-900">
+      Home Phone No
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="home_phone"
+             name="home_phone"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+    <div class="sm:col-span-3">
+    <label for="family_id"
+           class="block text-sm/6 font-medium text-gray-900">
+      Family ID
+    </label>
+
+    <div class="mt-2">
+      <input type="text"
+             id="family_id"
+             name="family_id"
+             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+    </div>
+  </div>
+
+
+  <!-- Button -->
+  <div class="sm:col-span-6 mt-3">
+    <button type="submit"
+    style="background-color: green; color: white; padding: 10px 20px; border-radius: 6px;">
+    Create Student
+</button>
+  </div>
+
+</form>
+
+
+
+<!-- <form action="/student" method="POST" class="row g-3">
 
   <div class="col-md-12">
     <label class="form-label">Admission Number</label>
@@ -67,4 +314,4 @@
     </button>
   </div>
 
-</form>
+</form> -->
