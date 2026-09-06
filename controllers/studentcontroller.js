@@ -88,9 +88,9 @@ const editStudent = (req, res) => {
 };
 const updateStudent = (req, res) => {
     const studentId = req.params.id;
-    const { admission_number, first_name, last_name } = req.body;
+    const { admission_number, first_name, last_name, gender, dob, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id } = req.body;
 
-    if (!admission_number || !first_name || !last_name) {
+    if (!admission_number || !first_name || !last_name || !gender || !dob || !nic_number || !birth_certificate_number || !tele_number || !house_id || !grade_id || !medium || !date_of_admission || !per_address || !family_id  ) {
         res.status(400).send('All fields are required');
         return;
     }
@@ -99,7 +99,7 @@ const updateStudent = (req, res) => {
         if (err) {
             res.send('Error connecting to the database!');
         } else {
-            db.query('UPDATE students SET admission_number = ?, first_name = ?, last_name = ? WHERE id = ?', [admission_number, first_name, last_name, studentId], (err, results) => {
+            db.query('UPDATE students SET admission_number = ?, first_name = ?, last_name = ?, gender = ?, dob = ?, nic_number = ?, birth_certificate_number = ?, tele_number = ?, house_id = ?, grade_id = ?, medium = ?, date_of_admission = ?, per_address = ?, family_id = ? WHERE id = ?', [admission_number, first_name, last_name, gender, dob, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id, studentId], (err, results) => {
                 if (err) {
                     res.send('Error executing query!');
                 } else {
@@ -115,10 +115,10 @@ const createStudent=(req, res) => {
 
 const addStudent =  (req, res) => {
     // res.send('Received data: ' + JSON.stringify(req.body));
-    const { admission_number, first_name, last_name } = req.body;
+    const { admission_number, first_name, last_name, gender, dob, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id } = req.body;
 
     // res.send(`Received data: Admission Number - ${admission_no}, First Name - ${first_name}, Last Name - ${last_name}`);
-    if (!admission_number || !first_name || !last_name) {
+    if (!admission_number || !first_name || !last_name || !gender || !dob || !nic_number || !birth_certificate_number || !tele_number || !house_id || !grade_id || !medium || !date_of_admission || !per_address || !family_id  ) {
         res.status(400).send('All fields are required');
         return;
     }
@@ -129,7 +129,7 @@ const addStudent =  (req, res) => {
             res.send('Error connecting to the database!');
         } else {
 
-            db.query('INSERT INTO students (admission_number, first_name, last_name) VALUES (?, ?, ?)', [admission_number, first_name, last_name], (err, results) => {
+            db.query('INSERT INTO students (admission_number, first_name, last_name, gender, dob, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [admission_number, first_name, last_name, gender, dob, nic_number, birth_certificate_number, tele_number, house_id, grade_id, medium, date_of_admission, per_address, family_id], (err, results) => {
                 if (err) {
                     res.send('Error executing query!');
                 } else {

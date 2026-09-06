@@ -8,12 +8,14 @@ app.set('view engine', 'ejs');
 app.use(layout);
 app.use(express.static('public'));
 app.set('layout', 'layouts/main');
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 app.use('/student', require('./routes/student.js'));
 app.use('/studentapi', require('./routes/studentapi.js'));
 app.use('/grade', require('./routes/grade.js'));
+app.use('/gradeapi', require('./routes/gradeapi.js'));
 app.use('/teachers', require('./routes/teachers.js'));
 app.use('/subjects', require('./routes/subjects.js'));
 app.use('/houses', require('./routes/houses.js'));
