@@ -63,12 +63,12 @@ const getAllGrades = (req, res) => {
 
 const updateGrade = (req, res) => {
     const gradeId = req.params.id;
-    const { grade_name, grade_group, grade_order, colour } = req.body;
+    const { grade_name } = req.body;
 
-    if (!grade_name || !grade_group || !grade_order || !colour ) {
+    if (!grade_name) {
         return res.status(400).json({
             "success": false,
-            "message": 'All fields are required',
+            "message": 'Grade name is required',
         });
     }
 
@@ -79,7 +79,7 @@ const updateGrade = (req, res) => {
                 "message": 'Error connecting to the database!',
             });
         } else {
-            db.query('UPDATE grades SET name = ?, group = ?, order = ?, colour = ? WHERE id = ?', [grade_name, grade_group, grade_order, colour, gradeId], (err, results) => {
+            db.query('UPDATE grades SET name = ? WHERE id = ?', [grade_name, gradeId], (err, results) => {
                 if (err) {
                     return res.status(500).json({
                         "success": false,
@@ -88,7 +88,7 @@ const updateGrade = (req, res) => {
                 } else {
                     return res.status(200).json({
                         "success": true,
-                        "message": 'Grade updated successfully!',
+                        "message": 'Grade name updated successfully!',
                     });
                 }
             });
@@ -100,37 +100,11 @@ const addGrade =  (req, res) => {
     // res.send('Received data: ' + JSON.stringify(req.body));
     const { grade_name, grade_group, grade_order, colour } = req.body;
 
-    // res.send(`Received data: Grade Name - ${grade_name}, Grade Group - ${grade_group}`);
+    // res.send(`Received data: Admission Number - ${admission_no}, First Name - ${first_name}, Last Name - ${last_name}`);
     if (!grade_name || !grade_group || !grade_order || !colour ) {
-        return res.status(400).json({
-            "success": false,
-            "message": 'All fields are required',
-        });
+        res.status(400).send('All fields are required');
+        return;
     }
-
-    db.connect((err) => {
-        if (err) {
-            return res.status(500).json({
-                "success": false,
-                "message": 'Error connecting to the database!',
-            });
-        } else {
-            db.query('INSERT INTO grades (name, group, order, colour) VALUES (?, ?, ?, ?)', [grade_name, grade_group, grade_order, colour], (err, results) => {
-                if (err) {
-                    return res.status(500).json({
-                        "success": false,
-                        "message": 'Error executing query!',
-                    });
-                } else {
-                    return res.status(201).json({
-                        "success": true,
-                        "message": 'Grade created successfully!',
-                    });
-                }
-            });
-        }
-    });
-};
 
 
     db.connect((err) => {
@@ -138,16 +112,16 @@ const addGrade =  (req, res) => {
             res.send('Error connecting to the database!');
         } else {
 
-            db.query('INSERT INTO grades (grade_name, grade_group, grade_order, colour) VALUES ( ?, ?, ?, ?)', [grade_name, grade_group, grade_order, colour], (err, results) => {
+            db.query('INSERT INTO grades (name, group, order, colour) VALUES (?, ?, ?, ?)', [grade_name, grade_group, grade_order, colour], (err, results) => {
                 if (err) {
                     res.send('Error executing query!');
                 } else {
-                    res.redirect('/student');
+                    res.redirect('/grade');
                 }
             });
         }
     });
-    
+};
 const getGradeById = (req, res) => {
     const gradeId = req.params.id;
     if (!gradeId) {

@@ -1,65 +1,154 @@
-<div class="card shadow">
+<div class="px-4 sm:px-6 lg:px-8 py-8">
 
-    <div class="card-header bg-primary text-white">
-        <h3 class="mb-0">Subject Details</h3>
+    <!-- Header -->
+    <div class="sm:flex sm:items-center">
+        <div class="sm:flex-auto">
+            <h1 class="text-2xl font-semibold text-Black">
+                <%= subject.subject_name %>'s Details
+            </h1>
+
+            <p class="mt-2 text-sm text-gray-400">
+                Subject information and details.
+            </p>
+        </div>
+
+        <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="/subjects"
+               class="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-blue-500">
+                Back to Subjects
+            </a>
+        </div>
     </div>
 
-    <div class="card-body">
 
-        <table class="table table-bordered">
+    <!-- Subject Details -->
+    <div class="mt-8 flow-root">
 
-            <tr>
-                <th width="30%">ID</th>
-                <td><%= subject.id %></td>
-            </tr>
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
 
-            <tr>
-                <th>Subject Name</th>
-                <td><%= subject.subject_name %></td>
-            </tr>
+            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 
-            <tr>
-                <th>Subject Index</th>
-                <td><%= subject.subject_index %></td>
-            </tr>
+                <div class="overflow-hidden rounded-lg">
 
-            <tr>
-                <th>Subject Order</th>
-                <td><%= subject.subject_order %></td>
-            </tr>
+                    <table class="min-w-full divide-y divide-Black/15">
 
-            <tr>
-                <th>Subject Number</th>
-                <td><%= subject.subject_number %></td>
-            </tr>
+                        <thead>
+                            <tr>
+                                <th class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-Black sm:pl-0">
+                                    Field
+                                </th>
 
-            <tr>
-                <th>Colour</th>
-                <td><%= subject.colour %></td>
-            </tr>
+                                <th class="px-3 py-3.5 text-left text-sm font-semibold text-Black">
+                                    Details
+                                </th>
+                            </tr>
+                        </thead>
 
-        </table>
 
-        <a href="/subjects" class="btn btn-secondary">
-            ← Back
-        </a>
+                        <tbody class="divide-y divide-Black/10">
 
-        <a href="/subjects/<%= subject.id %>/edit"
-           class="btn btn-warning">
-            ✏️ Edit
-        </a>
+                            <!-- Admission No -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Subject Name
+                                </td>
 
-        <form action="/subjects/<%= subject.id %>?_method=DELETE"
-              method="POST"
-              style="display:inline;">
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= subject.subject_name %>
+                                </td>
+                            </tr>
 
-            <button type="submit"
-                    class="btn btn-danger"
-                    onclick="return confirm('Are you sure you want to delete this subject?')">
-                🗑️ Delete
-            </button>
 
-        </form>
+                            <!-- First Name -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Subject Index
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= subject.subject_index %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Last Name -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Subject Order
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= subject.subject_order %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Gender -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Subject Number
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= subject.subject_number %>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Subject color
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= subject.colour %>
+                                </td>
+                            </tr>
+
+
+
+                            <!-- Actions -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium text-Black sm:pl-0">
+                                    Action
+                                </td>
+
+                                <td class="px-3 py-4">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <!-- Edit -->
+                                        <a href="/subjects/<%= subject.id %>/edit"
+                                           class="rounded-md bg-Yellow-500 px-3 py-2 text-sm font-semibold text-Black hover:bg-Yellow-400">
+                                            🖊 Edit
+                                        </a>
+
+
+                                        <!-- Delete -->
+                                        <form action="/subjects/<%= subject.id %>?_method=DELETE"
+                                              method="POST">
+
+                                            <button type="submit"
+                                                    onclick="return confirm('⚠️ This action cannot be undone.\n\nAre you sure you want to delete this subject?');"
+                                                    class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-Black hover:bg-red-500">
+                                                🗑 Delete
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 

@@ -88,7 +88,7 @@ const editGrade = (req, res) => {
 };
 const updateGrade = (req, res) => {
     const GradeId = req.params.id;
-    const {  grade_name, garde_group, grade_order, colour } = req.body;
+    const {  grade_name, grade_group, grade_order, colour } = req.body;
 
     if (!grade_name || !grade_group || !grade_order || !colour ) {
         res.status(400).send('All fields are required');
@@ -103,7 +103,7 @@ const updateGrade = (req, res) => {
                 if (err) {
                     res.send('Error executing query!');
                 } else {
-                    res.redirect('/student');
+                    res.redirect('/grade');
                 }
             });
         }
