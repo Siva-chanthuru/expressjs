@@ -1,0 +1,115 @@
+<div class="mt-8 flow-root">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+
+            <table class="min-w-full divide-y divide-gray-300">
+
+                   <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="/grade/create"
+                class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+
+                + New Grade
+
+            </a>
+        </div>
+    </div>
+
+                <!-- Heading -->
+                <thead>
+                    <tr>
+                        <th scope="col"
+                            class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                            Grade Name
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Grade Group
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Grade Order
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Color
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+
+                <!-- Students -->
+                <tbody class="divide-y divide-gray-200">
+
+                    <% grades.forEach((grade) => { %>
+
+                        <tr>
+
+                            <!-- Grade Name -->
+                            <td class="py-4 pr-3 pl-4 text-sm font-medium text-gray-900 sm:pl-0">
+                                <%= grade.grade_name %>
+                            </td>
+
+                            <!-- Grade Group -->
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= grade.grade_group %>
+                            </td>
+
+                            <!-- Grade Order -->
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= grade.grade_order %>
+                            </td>
+
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= grade.grade_color %>
+                            </td>
+
+                            <!-- Actions -->
+                            <td class="px-3 py-4 text-sm">
+
+                                <div class="flex gap-2">
+
+                                    <a href="/grade/<%= grade.id %>/show"
+                                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500">
+                                        👁 View
+                                    </a>
+
+                                    <!-- Edit -->
+                                    <a href="/grade/<%= grade.id %>/edit"
+                                         class="inline-flex items-center justify-center rounded-md !bg-yellow-500 px-4 py-2 text-sm font-semibold !text-white shadow-sm hover:!bg-yellow-400">
+                                       🖊 Edit
+                                     </a>
+
+                                   <!-- Delete -->
+                                    <form action="/grade/<%= grade.id %>?_method=DELETE"
+                                     method="POST">
+
+                                    <button type="submit"
+                                         onclick="return confirm('⚠️ This action cannot be undone.\n\nAre you sure you want to delete this student?');"
+                                          class="inline-flex items-center justify-center rounded-md !bg-red-600 px-4 py-2 text-sm font-semibold !text-white shadow-sm hover:!bg-red-500">
+                                        🗑 Delete
+                                      </button>
+
+                                    </form>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    <% }); %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

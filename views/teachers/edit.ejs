@@ -1,0 +1,114 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">Edit Teacher</h2>
+
+    <form action="/teachers/<%= teacher.id %>?_method=PUT" method="POST">
+
+        <div class="mb-12">
+            <label class="form-label">Registration Number</label>
+            <input type="text"
+                   name="registration_number"
+                   class="form-control"
+                   value="<%= teacher.registration_number %>"
+                   required>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">Nic Number</label>
+            <input type="Text"
+                   name="nic_number"
+                   class="form-control"
+                   value="<%= teacher.nic_number %>"
+                   
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">First Name</label>
+            <input type="text"
+                   name="first_name"
+                   class="form-control"
+                   value="<%= teacher.first_name %>"
+                   required>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">Last Name</label>
+            <input type="text"
+                   name="last_name"
+                   class="form-control"
+                   value="<%= teacher.last_name %>"
+                   required>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">Gender</label>
+            <select type="text"
+                    name="gender"
+                    class="form-control"
+                    value="<%= teacher.gender %>"
+                    
+                <option value="M" <%= teacher.gender === 'M' ? 'selected' : '' %>>Male</option>
+                <option value="F" <%= teacher.gender === 'F' ? 'selected' : '' %>>Female</option>
+            </select>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">Title</label>
+            <select type="text"
+                    name="title"
+                    class="form-control"
+                    value="<%= teacher.title %>"
+                    required>
+                <option value="Mr" <%= teacher.title === 'Mr' ? 'selected' : '' %>>Mr</option>
+                <option value="Mrs" <%= teacher.title === 'Mrs' ? 'selected' : '' %>>Mrs</option>
+                <option value="Miss" <%= teacher.title === 'Miss' ? 'selected' : '' %>>Miss</option>
+            </select>
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">DOB</label>
+            <input type="date"
+                   name="dob"
+                   class="form-control"
+                   value="<%= teacher.dob %>">
+                  
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">Permanent Address</label>
+            <input type="text"
+                   name="permanent_address"
+                   class="form-control"
+                   value="<%= teacher.permanent_address %>">
+                
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">Mobile Number</label>
+            <input type="text"
+                   name="mobile_number"
+                   class="form-control"
+                   value="<%= teacher.mobile_number %>"
+                   
+        </div>
+
+        <div class="mb-6">
+            <label class="form-label">Date of First Appointment</label>
+            <input type="date"
+                   name="date_of_first_appointment"
+                   class="form-control"
+                   value="<%= teacher.date_of_first_appointment %>"
+                   
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Update
+        </button>
+
+        <a href="/teachers" class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+
+</div>

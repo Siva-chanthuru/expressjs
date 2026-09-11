@@ -1,0 +1,82 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3>Teacher Details</h3>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th width="30%">ID</th>
+                    <td><%= teacher.id %></td>
+                </tr>
+
+                <tr>
+                    <th>Registration Number</th>
+                    <td><%= teacher.registration_number %></td>
+                </tr>
+
+                <tr>
+                    <th>NIC Number</th>
+                    <td><%= teacher.nic_number %></td>
+                </tr>
+
+                <tr>
+                    <th>First Name</th>
+                    <td><%= teacher.first_name %></td>
+                </tr>
+
+                <tr>
+                    <th>Last Name</th>
+                    <td><%= teacher.last_name %></td>
+                </tr>
+
+                <tr>
+                    <th>Gender</th>
+                    <td><%= teacher.gender %></td>
+                </tr>
+
+                <tr>
+                    <th>Title</th>
+                    <td><%= teacher.title %></td>
+                </tr>
+
+                <tr>
+                    <th>Date of Birth</th>
+                    <td><%= teacher.date_of_birth %></td>
+                </tr>
+
+                <tr>
+                    <th>Permanent Address</th>
+                    <td><%= teacher.permanent_address %></td>
+                </tr>
+
+                <tr>
+                    <th>Mobile Number</th>
+                    <td><%= teacher.mobile_number %></td>
+                </tr>
+
+                <tr>
+                    <th>Date of First Appointment</th>
+                    <td><%= teacher.date_of_first_appointment %></td>
+                </tr>
+
+            </table>
+
+            <a href="/teachers" class="btn btn-secondary">
+                ← Back
+            </a>
+
+            <a href="/teachers/<%= teacher.id %>/edit" class="btn btn-warning">
+                ✏ Edit
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

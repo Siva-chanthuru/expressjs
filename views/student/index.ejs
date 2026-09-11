@@ -1,16 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<h1>, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>
-        <%= title %>
-    </h1>
-    <p>
-        <%= message %>
-    </p>
-</body>
-</html>
+<div class="mt-8 flow-root">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+
+            <table class="min-w-full divide-y divide-gray-300">
+
+                   <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="/student/create"
+                class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+
+                + New Student
+
+            </a>
+        </div>
+    </div>
+
+                <!-- Heading -->
+                <thead>
+                    <tr>
+                        <th scope="col"
+                            class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                            Admission No
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            First Name
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Last Name
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Gender
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Nic Number
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+
+                <!-- Students -->
+                <tbody class="divide-y divide-gray-200">
+
+                    <% students.forEach((student) => { %>
+
+                        <tr>
+
+                            <!-- Admission Number -->
+                            <td class="py-4 pr-3 pl-4 text-sm font-medium text-gray-900 sm:pl-0">
+                                <%= student.admission_number %>
+                            </td>
+
+                            <!-- First Name -->
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= student.first_name %>
+                            </td>
+
+                            <!-- Last Name -->
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= student.last_name %>
+                            </td>
+
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= student.gender %>
+                            </td>
+
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= student.nic_number %>
+                            </td>
+
+                            <!-- Actions -->
+                            <td class="px-3 py-4 text-sm">
+
+                                <div class="flex gap-2">
+
+                                    <a href="/student/<%= student.id %>/show"
+                                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500">
+                                        👁 View
+                                    </a>
+
+                                    <!-- Edit -->
+                                    <a href="/student/<%= student.id %>/edit"
+                                         class="inline-flex items-center justify-center rounded-md !bg-yellow-500 px-4 py-2 text-sm font-semibold !text-white shadow-sm hover:!bg-yellow-400">
+                                       🖊 Edit
+                                     </a>
+
+                                   <!-- Delete -->
+                                    <form action="/student/<%= student.id %>?_method=DELETE"
+                                     method="POST">
+
+                                    <button type="submit"
+                                         onclick="return confirm('⚠️ This action cannot be undone.\n\nAre you sure you want to delete this student?');"
+                                          class="inline-flex items-center justify-center rounded-md !bg-red-600 px-4 py-2 text-sm font-semibold !text-white shadow-sm hover:!bg-red-500">
+                                        🗑 Delete
+                                      </button>
+
+                                    </form>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    <% }); %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

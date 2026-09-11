@@ -1,0 +1,85 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">Edit Family</h2>
+
+    <form action="/families/<%= family.id %>?_method=PUT" method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Mobile Number</label>
+            <input type="text"
+                   name="mobile_number"
+                   class="form-control"
+                   value="<%= family.mobile_number %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Father's First Name</label>
+            <input type="text"
+                   name="fa_first_name"
+                   class="form-control"
+                   value="<%= family.fa_first_name %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mother's First Name</label>
+            <input type="text"
+                   name="mo_first_name"
+                   class="form-control"
+                   value="<%= family.mo_first_name %>"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Father's NIC Number</label>
+            <input type="text"
+                   name="fa_nic_number"
+                   class="form-control"
+                   value="<%= family.fa_nic_number %>"
+                   required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mother's NIC Number</label>
+            <input type="text"
+                   name="mo_nic_number"
+                   class="form-control"
+                   value="<%= family.mo_nic_number %>"
+                   required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Father's Job</label>
+            <input type="text"
+                   name="fa_job"
+                   class="form-control"
+                   value="<%= family.fa_job %>"
+                   required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mother's Job</label>
+            <input type="text"
+                   name="mo_job"
+                   class="form-control"
+                   value="<%= family.mo_job %>"
+                   required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Residential Address</label>
+            <input type="text"
+                   name="residential_address"
+                   class="form-control"
+                   value="<%= family.residential_address %>"
+                   required>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Update
+        </button>
+
+        <a href="/families" class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+
+</div>

@@ -1,0 +1,122 @@
+<div class="mt-8 flow-root">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+
+            <table class="min-w-full divide-y divide-gray-300">
+
+                   <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="/subjects/create"
+                class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+
+                + New Subject
+
+            </a>
+        </div>
+    </div>
+
+                <!-- Heading -->
+                <thead>
+                    <tr>
+                        <th scope="col"
+                            class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                            subject Name
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            subject Index
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            subject Order
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            subject Number
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Colour
+                        </th>
+
+                        <th scope="col"
+                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+
+                <!-- Subjects -->
+                <tbody class="divide-y divide-gray-200">
+
+                    <% subjects.forEach((subject) => { %>
+
+                        <tr>
+
+                            <!-- Subject Name -->
+                            <td class="py-4 pr-3 pl-4 text-sm font-medium text-gray-900 sm:pl-0">
+                                <%= subject.subject_name %>
+                            </td>
+
+                            <!-- Subject Index -->
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= subject.subject_index %>
+                            </td>
+
+                            <!-- Subject Order -->
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= subject.subject_order %>
+                            </td>
+
+                            <td class="px-3 py-4 text-sm text-gray-700">
+                                <%= subject.colour %>
+                            </td>
+
+
+                            
+                            <!-- Actions -->
+                            <td class="px-3 py-4 text-sm">
+
+                                <div class="flex gap-2">
+
+                                    <a href="/subjects/<%= subject.id %>/show"
+                                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500">
+                                        👁 View
+                                    </a>
+
+                                    <!-- Edit -->
+                                    <a href="/subjects/<%= subject.id %>/edit"
+                                         class="inline-flex items-center justify-center rounded-md !bg-yellow-500 px-4 py-2 text-sm font-semibold !text-white shadow-sm hover:!bg-yellow-400">
+                                       🖊 Edit
+                                     </a>
+
+                                   <!-- Delete -->
+                                    <form action="/subjects/<%= subject.id %>?_method=DELETE"
+                                     method="POST">
+
+                                    <button type="submit"
+                                         onclick="return confirm('⚠️ This action cannot be undone.\n\nAre you sure you want to delete this subject?');"
+                                          class="inline-flex items-center justify-center rounded-md !bg-red-600 px-4 py-2 text-sm font-semibold !text-white shadow-sm hover:!bg-red-500">
+                                        🗑 Delete
+                                      </button>
+
+                                    </form>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    <% }); %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

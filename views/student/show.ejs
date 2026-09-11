@@ -1,20 +1,372 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> 
-          <%= title %>
-    </h1>
-    <p>  
-          <%= message %>
-    </p>
-    <p>   
-         <%= studentid %>
-    </p>
+<div class="px-4 sm:px-6 lg:px-8 py-8">
 
-</body>
-</html>
+    <!-- Header -->
+    <div class="sm:flex sm:items-center">
+        <div class="sm:flex-auto">
+            <h1 class="text-2xl font-semibold text-Black">
+                <%= student.first_name %>'s Details
+            </h1>
+
+            <p class="mt-2 text-sm text-gray-400">
+                Student information and details.
+            </p>
+        </div>
+
+        <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="/student"
+               class="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-blue-500">
+                Back to Students
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Student Details -->
+    <div class="mt-8 flow-root">
+
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+
+            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+
+                <div class="overflow-hidden rounded-lg">
+
+                    <table class="min-w-full divide-y divide-Black/15">
+
+                        <thead>
+                            <tr>
+                                <th class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-Black sm:pl-0">
+                                    Field
+                                </th>
+
+                                <th class="px-3 py-3.5 text-left text-sm font-semibold text-Black">
+                                    Details
+                                </th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody class="divide-y divide-Black/10">
+
+                            <!-- Admission No -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Admission No
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.admission_number %>
+                                </td>
+                            </tr>
+
+
+                            <!-- First Name -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    First Name
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.first_name %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Last Name -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Last Name
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.last_name %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Gender -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Gender
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.gender %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Date of Birth -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Date of Birth
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.date_of_birth %>
+                                </td>
+                            </tr>
+
+
+                            <!-- NIC Number -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    NIC Number
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.nic_number %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Birth Certificate -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Birth Certificate Number
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.birth_certificate_number %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Telephone -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Telephone Number
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.tele_number %>
+                                </td>
+                            </tr>
+
+
+                            <!-- House -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    House
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.house_id %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Grade -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Grade
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.grade_id %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Medium -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Medium
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.medium %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Date of Admission -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Date of Admission
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.date_of_admission %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Permanent Address -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium text-Black sm:pl-0">
+                                    Permanent Address
+                                </td>
+
+                                <td class="px-3 py-4 text-sm text-gray-400">
+                                    <%= student.per_address %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Family ID -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-Black sm:pl-0">
+                                    Family ID
+                                </td>
+
+                                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-400">
+                                    <%= student.family_id %>
+                                </td>
+                            </tr>
+
+
+                            <!-- Actions -->
+                            <tr>
+                                <td class="py-4 pr-3 pl-4 text-sm font-medium text-Black sm:pl-0">
+                                    Action
+                                </td>
+
+                                <td class="px-3 py-4">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <!-- Edit -->
+                                        <a href="/student/<%= student.id %>/edit"
+                                           class="rounded-md bg-Yellow-500 px-3 py-2 text-sm font-semibold text-Black hover:bg-Yellow-400">
+                                            🖊 Edit
+                                        </a>
+
+
+                                        <!-- Delete -->
+                                        <form action="/student/<%= student.id %>?_method=DELETE"
+                                              method="POST">
+
+                                            <button type="submit"
+                                                    onclick="return confirm('⚠️ This action cannot be undone.\n\nAre you sure you want to delete this student?');"
+                                                    class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-Black hover:bg-red-500">
+                                                🗑 Delete
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- <h1>
+    <%= student.first_name %>'s Details
+</h1>
+<p>
+    <%= message %>
+</p>
+
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+        <tr>
+            <td>Admission No</td>
+            <td>
+                <%= student.admission_number %>
+            </td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td>
+                <%= student.first_name %>
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>
+                <%= student.last_name %>
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <%= student.gender %>
+            </td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td>
+                <%= student.date_of_birth %>
+            </td>
+        <tr>
+        <tr>
+            <td>NIC Number</td>
+            <td>
+                <%= student.nic_number %>
+            </td>
+        </tr>
+        <tr>
+            <td>Birth Certificate Number</td>
+            <td>
+                <%= student.birth_certificate_number %>
+            </td>
+        </tr>
+        <tr>
+            <td>Telephone Number</td>
+            <td>
+                <%= student.tele_number %>
+            </td>
+        </tr>
+        <tr>
+            <td>House</td>
+            <td>
+                <%= student.house_id %>
+            </td>
+        </tr>
+        <tr>
+            <td>Grade</td>
+            <td>
+                <%= student.grade_id %>
+            </td>
+        </tr>
+        <tr>
+            <td>Medium</td>
+            <td>
+                <%= student.medium %>
+            </td>
+        </tr>
+        <tr>
+            <td>Date of Admission</td>
+            <td>
+                <%= student.date_of_admission %>
+            </td>
+        </tr>
+        <tr>
+            <td>Permanent Address</td>
+            <td>
+                <%= student.per_address %>
+            </td>
+        </tr>
+        <tr>
+            <td>Family ID</td>
+            <td>
+                <%= student.family_id %>    
+        </td>
+        </tr>
+        <tr>
+            <td>Action</td>
+            <td>
+                 <a href="/student/<%= student.id %>/edit" class="btn btn-warning">🖊 Edit</a> |
+               <form action="/student/<%= student.id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('⚠️ This action cannot be undone.\n\nAre you sure you want to delete this student?');">
+        🗑 Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+<p><a href="/student" class="btn btn-secondary">Back to Student List</a></p> -->
