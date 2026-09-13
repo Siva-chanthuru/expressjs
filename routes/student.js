@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db.js');
 
-const { deleteStudent, getAllStudents, getStudentById, editStudent, updateStudent, createStudent, addStudent } = require('../controllers/StudentController.js');
+const { deleteStudent, getAllStudents, getStudentById, editStudent, updateStudent, createStudent, addStudent } = require('../controllers/studentcontroller.js');
 
 router.delete('/:id', deleteStudent);
 router.get('/', getAllStudents);
