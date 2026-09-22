@@ -3,7 +3,7 @@ const layout = require('express-ejs-layouts');
 const methodOverride = require('method-override');
 const db = require('./config/db.js');
 const app = express();
-const port = process.env.PORT || 3000;//const port = 3000;
+const port = 3000;
 app.set('view engine', 'ejs');
 app.use(layout);
 app.use(express.static('public'));
